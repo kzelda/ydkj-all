@@ -1,0 +1,10 @@
+{
+  "name": "ydkj-all-in-one",
+  "description": "eBook 'You Dont Know Js' All in one page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "run:app": "node ./src/app.js"
+  }
+}
