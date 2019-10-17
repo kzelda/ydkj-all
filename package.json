@@ -6,5 +6,8 @@
   "license": "MIT",
   "scripts": {
     "run:app": "node ./src/app.js"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
   }
 }
