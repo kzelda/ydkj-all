@@ -1,5 +1,3 @@
-# You Dont JS ~ All in one page
-
 # You Don't Know JS Yet: Getting Started - 2nd Edition
 
 | NOTE: |
