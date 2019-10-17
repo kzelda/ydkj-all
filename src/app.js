@@ -13,6 +13,7 @@ const readme = require('path').resolve(__dirname, '../README.md');
 
 let nb = 0;
 
+
 links.forEach((l,i) => {
     request(l, 
         async function (error, response, body) {
@@ -25,8 +26,14 @@ links.forEach((l,i) => {
           
             if(response != null && response.statusCode == 200){
                 console.log("Done" , l);
-                //console.log(body);
-                await fs.writeFileSync(`${pages_dir}/${i}.md`,body);
+                
+                var l_root = l.substring(0,l.lastIndexOf("/"));
+
+                if(body != null){
+                    body = body.replace(/fig(\d+).png/g,`${l_root}/fig$1.png`);
+
+                    await fs.writeFileSync(`${pages_dir}/${i}.md`,body);
+                }
             }
         });
 });

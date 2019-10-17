@@ -593,7 +593,7 @@ The simple rules for traversing nested *Scope*: *Engine* starts at the currently
 
 To visualize the process of nested *Scope* resolution, I want you to think of this tall building.
 
-<img src="fig1.png" width="250">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/scope-closures/fig1.png" width="250">
 
 The building represents our program's nested *Scope* rule set. The first floor of the building represents your currently executing *Scope*, wherever you are. The top level of the building is the global *Scope*.
 
@@ -725,7 +725,7 @@ foo( 2 ); // 2 4 12
 
 There are three nested scopes inherent in this code example. It may be helpful to think about these scopes as bubbles inside of each other.
 
-<img src="fig2.png" width="500">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/scope-closures/fig2.png" width="500">
 
 **Bubble 1** encompasses the global scope, and has just one identifier in it: `foo`.
 
@@ -5151,7 +5151,7 @@ You likely wouldn't expect to walk into a building and find, framed and hanging 
 
 It's more useful to consider the direct relationship of a class to an object instance, rather than any indirect relationship between an object instance and the class it came from. **A class is instantiated into object form by a copy operation.**
 
-<img src="fig1.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig1.png">
 
 As you can see, the arrows move from left to right, and from top to bottom, which indicates the copy operations that occur, both conceptually and physically.
 
@@ -5278,7 +5278,7 @@ When classes are inherited, there is a way **for the classes themselves** (not t
 
 Remember this figure from earlier:
 
-<img src="fig1.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig1.png">
 
 Notice how for both instantiation (`a1`, `a2`, `b1`, and `b2`) *and* inheritance (`Bar`), the arrows indicate a copy operation.
 
@@ -5296,7 +5296,7 @@ On the surface, this seems like a powerful addition to class-orientation, giving
 
 There's another variation, the so called "Diamond Problem", which refers to the scenario where a child class "D" inherits from two parent classes ("B" and "C"), and each of those in turn inherits from a common "A" parent. If "A" provides a method `drive()`, and both "B" and "C" override (polymorph) that method, when `D` references `drive()`, which version should it use (`B:drive()` or `C:drive()`)?
 
-<img src="fig2.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig2.png">
 
 These complications go even much deeper than this quick glance. We address them here only so we can contrast to how JavaScript's mechanisms work.
 
@@ -5759,7 +5759,7 @@ Can we get what we want in a more *direct* way? **Yes!** The hero is `Object.cre
 
 In JavaScript, we don't make *copies* from one object ("class") to another ("instance"). We make *links* between objects. For the `[[Prototype]]` mechanism, visually, the arrows move from right to left, and from bottom to top.
 
-<img src="fig3.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig3.png">
 
 This mechanism is often called "prototypal inheritance" (we'll explore the code in detail shortly), which is commonly said to be the dynamic-language version of "classical inheritance". It's an attempt to piggy-back on the common understanding of what "inheritance" means in the class-oriented world, but *tweak* (**read: pave over**) the understood semantics, to fit dynamic scripting.
 
@@ -5947,7 +5947,7 @@ We've seen some approximations of "class" mechanics as typically hacked into Jav
 
 Actually, we've already seen the mechanism which is commonly called "prototypal inheritance" at work when `a` was able to "inherit from" `Foo.prototype`, and thus get access to the `myName()` function. But we traditionally think of "inheritance" as being a relationship between two "classes", rather than between "class" and "instance".
 
-<img src="fig3.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig3.png">
 
 Recall this figure from earlier, which shows not only delegation from an object (aka, "instance") `a1` to object `Foo.prototype`, but from `Bar.prototype` to `Foo.prototype`, which somewhat resembles the concept of Parent-Child class inheritance. *Resembles*, except of course for the direction of the arrows, which show these are delegation links rather than copy operations.
 
@@ -6602,7 +6602,7 @@ Let's examine the mental models involved between these two snippets.
 
 First, the class-style code snippet implies this mental model of entities and their relationships:
 
-<img src="fig4.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig4.png">
 
 Actually, that's a little unfair/misleading, because it's showing a lot of extra detail that you don't *technically* need to know at all times (though you *do* need to understand it!). One take-away is that it's quite a complex series of relationships. But another take-away: if you spend the time to follow those relationship arrows around, **there's an amazing amount of internal consistency** in JS's mechanisms.
 
@@ -6610,13 +6610,13 @@ For instance, the ability of a JS function to access `call(..)`, `apply(..)`, an
 
 OK, let's now look at a *slightly* simplified version of that diagram which is a little more "fair" for comparison -- it shows only the *relevant* entities and relationships.
 
-<img src="fig5.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig5.png">
 
 Still pretty complex, eh? The dotted lines are depicting the implied relationships when you setup the "inheritance" between `Foo.prototype` and `Bar.prototype` and haven't yet *fixed* the **missing** `.constructor` property reference (see "Constructor Redux" in Chapter 5). Even with those dotted lines removed, the mental model is still an awful lot to juggle every time you work with object linkages.
 
 Now, let's look at the mental model for OLOO-style code:
 
-<img src="fig6.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/this-object-prototypes/fig6.png">
 
 As you can see comparing them, it's quite obvious that OLOO-style code has *vastly less stuff* to worry about, because OLOO-style code embraces the **fact** that the only thing we ever really cared about was the **objects linked to other objects**.
 
@@ -11323,7 +11323,7 @@ Be a responsible and mature developer. Learn how to use the power of coercion (b
 
 Here's a handy table made by Alex Dorey (@dorey on GitHub) to visualize a variety of comparisons:
 
-<img src="fig1.png" width="600">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/types-grammar/fig1.png" width="600">
 
 Source: https://github.com/dorey/JavaScript-Equality-Table
 
@@ -24393,7 +24393,7 @@ Don't believe any hype that `=>` is primarily, or even mostly, about fewer keyst
 
 If you prefer a visual decision chart for how/why to pick an arrow function:
 
-<img src="fig1.png">
+<img src="https://raw.githubusercontent.com/getify/You-Dont-Know-JS/2nd-ed/es-next-beyond/fig1.png">
 
 ## `for..of` Loops
 
